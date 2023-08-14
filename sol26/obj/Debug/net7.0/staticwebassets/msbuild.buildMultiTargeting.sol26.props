@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\sol26.props" />
+</Project>

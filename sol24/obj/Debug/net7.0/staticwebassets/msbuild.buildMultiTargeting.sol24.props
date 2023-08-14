@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\sol24.props" />
+</Project>

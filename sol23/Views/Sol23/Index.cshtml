@@ -1,0 +1,39 @@
+@model sol23.Models.Hero
+
+@{
+    var heros = ViewBag.Heros as List<Hero>;
+}
+
+<h1>Heros</h1>
+<br>
+<br>
+
+<a href="/Sol23/AddHero">Add Hero</a>
+
+<br>
+<br>
+
+@foreach (var hero in heros)
+{
+    <div style="display: flex;">
+        <div style="padding-right: 20px;">
+            Id : @hero.Id
+        </div>
+        <div style="padding-right: 20px;">
+            <div>
+                <strong>Name: @hero.Name</strong>
+            </div>
+            <div>
+                <strong>Power: @hero.PowerLvl</strong>
+            </div>
+        </div>
+        <div style="display: flex">
+            <a href="/Sol23/UpdateHero?id=@hero.Id" style="padding: 10px;">Update</a>
+            <form asp-action="DeleteHero" style="padding: 10px;">
+                <input type="hidden" asp-for="Id" value="@hero.Id" />
+                <button  type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+    <br>
+}

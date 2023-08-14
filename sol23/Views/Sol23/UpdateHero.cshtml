@@ -1,0 +1,16 @@
+@model sol23.Models.Hero
+
+
+<form asp-action="Update">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <label asp-for="PowerLvl"></label>
+        <input asp-for="PowerLvl" />
+    </div>
+
+    <button type="submit">Update</button>
+</form>

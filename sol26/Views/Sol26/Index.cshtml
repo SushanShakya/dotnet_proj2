@@ -1,0 +1,14 @@
+@model sol26.Models.Person
+
+<h1>Hi, Who might you be ?</h1>
+
+<br>
+<form asp-action="Save">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+    </div>
+    <br>
+
+    <button type="Submit">Continue</button>
+</form>

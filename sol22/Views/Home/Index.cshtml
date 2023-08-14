@@ -1,0 +1,32 @@
+﻿@model sol22.Models.Company
+@{
+    var companies = ViewBag.Companies as List<Company>;
+}
+
+<a href="/Home/AddCompany"> Add Company</a>
+<br>
+<br>
+<br>
+
+@foreach (var company in companies)
+{
+    <div style="display: flex; align-items:center;">
+        <div style="padding-right: 20px;">Id : @company.Id</div>
+        <div style="padding-right: 20px;">
+            <div>Name : @company.Name</div>
+            <div>Address : @company.Address</div>
+        </div>
+        <div style="padding: 10px;">
+            <a href="/Home/UpdateCompany?id=@company.Id">
+                Update
+            </a>
+        </div>
+        <div style="padding: 10px;">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" value="@company.Id" />
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+    <br>
+}

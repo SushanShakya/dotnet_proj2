@@ -1,0 +1,25 @@
+<h1>Calculator</h1>
+
+<label for="a">Enter number 1</label>
+<br>
+<input type="number" id="a" />
+<br>
+<br>
+
+<label for="b">Enter number 2</label>
+<br>
+<input type="number" id="b" />
+<br>
+<br>
+
+<select name="operation" id="op">
+    <option value="add">Add</option>
+    <option value="sub">Substract</option>
+    <option value="mul">Multiply</option>
+</select>
+<br>
+<br>
+
+<p>Result : {{result}}</p>
+
+<button (click)="compute()">Compute</button>

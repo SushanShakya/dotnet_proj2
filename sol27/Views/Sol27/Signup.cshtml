@@ -1,0 +1,39 @@
+@model SignUpViewModel
+
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<h2>Sign Up</h2>
+
+<form id="signupForm" asp-action="SignUp" data-val="true">
+    <div class="form-group">
+        <label>Name:</label>
+        <input type="text" class="form-control" name="Name" data-val="true" data-val-required="Name is required" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="email" class="form-control" name="Email" data-val="true" data-val-required="Email is required"
+            data-val-email="Invalid email address" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" name="Password" data-val="true"
+            data-val-required="Password is required" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        $(document).ready(function () {
+            $("#signupForm").validate();
+        });
+    </script>
+}
+

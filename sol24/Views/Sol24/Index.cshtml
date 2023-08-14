@@ -1,0 +1,32 @@
+@model sol24.Models.Game
+@{
+    var games = ViewBag.Games as List<Game>;
+}
+
+<h2>Games</h2>
+
+<br>
+
+<a href="/Sol24/AddGame">Add Game</a>
+
+<br>
+<br>
+
+@foreach (var game in games)
+{
+    <div style="display: flex; align-items: center;">
+        <div style="padding-right: 20px">
+            id : @game.Id
+        </div>
+        <div style="padding-right: 20px">
+            @game.Name (@game.ReleaseYear)
+        </div>
+        <div style="display: flex;">
+            <a href="/Sol24/EditGame?id=@game.Id" style="padding: 10px">Update</a>
+            <form asp-action="Delete" style="padding: 10px">
+                <input type="hidden" asp-for="Id" value="@game.Id" />
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+    </div>
+}

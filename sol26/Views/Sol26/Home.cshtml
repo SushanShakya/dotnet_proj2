@@ -1,0 +1,10 @@
+@{
+    var Names = ViewBag.Names as List<string>;
+}
+
+<h1>Following are the saved States</h1>
+
+@foreach (var name in Names)
+{
+    <h2>@name</h2>
+}
